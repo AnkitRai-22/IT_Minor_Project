@@ -2,6 +2,7 @@ import numpy as np
 from flask import Flask, request, jsonify, render_template
 import pickle
 import torch
+from sentence_transformers import SentenceTransformer,util
 
 app = Flask(__name__)
 
@@ -9,9 +10,8 @@ app = Flask(__name__)
 def home():
     return render_template('index.html')
 
-@app.route('/query',methods=['POST'])
+@app.route('/predict',methods=['POST'])
 
-from sentence_transformers import SentenceTransformer,util
 input = request.form['text']
 def val2dict(input)
     embedder=SentenceTransformer('xlm-r-100langs-bert-base-nli-stsb-mean-tokens')
