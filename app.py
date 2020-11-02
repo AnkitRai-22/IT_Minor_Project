@@ -12,7 +12,7 @@ def home():
 
 @app.route('/predict',methods=['POST'])
 
-input = request.form['text']
+input = request.form['query']
 def val2dict(input)
     embedder=SentenceTransformer('xlm-r-100langs-bert-base-nli-stsb-mean-tokens')
     corpus=['boy','girl','india','fruit']
