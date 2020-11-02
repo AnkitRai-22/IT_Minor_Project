@@ -1,6 +1,7 @@
 import numpy as np
 from flask import Flask, request, jsonify, render_template
 import pickle
+import torch
 
 app = Flask(__name__)
 
@@ -9,13 +10,14 @@ def home():
     return render_template('index.html')
 
 @app.route('/query',methods=['POST'])
-import torch
+
 from sentence_transformers import SentenceTransformer,util
-def val2dict(flask.request.values)
+input = flask.request.values
+def val2dict(input)
     embedder=SentenceTransformer('xlm-r-100langs-bert-base-nli-stsb-mean-tokens')
     corpus=['boy','girl','india','fruit']
     corpus_embed = embedder.encode(corpus, convert_to_tensor=True)
-    queries=[flask.request.values]
+    queries=[input]
     top_k=4
     for query in queries:
         query_embedding = embedder.encode(query, convert_to_tensor=True)
