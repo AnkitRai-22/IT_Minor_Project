@@ -15,7 +15,7 @@ def val2dict(flask.request.values)
     embedder=SentenceTransformer('xlm-r-100langs-bert-base-nli-stsb-mean-tokens')
     corpus=['boy','girl','india','fruit']
     corpus_embed = embedder.encode(corpus, convert_to_tensor=True)
-    queries=[query]
+    queries=[flask.request.values]
     top_k=4
     for query in queries:
         query_embedding = embedder.encode(query, convert_to_tensor=True)
