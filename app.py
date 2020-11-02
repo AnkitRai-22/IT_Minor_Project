@@ -12,7 +12,7 @@ def home():
 @app.route('/query',methods=['POST'])
 
 from sentence_transformers import SentenceTransformer,util
-input = flask.request.values
+input = request.form['text']
 def val2dict(input)
     embedder=SentenceTransformer('xlm-r-100langs-bert-base-nli-stsb-mean-tokens')
     corpus=['boy','girl','india','fruit']
