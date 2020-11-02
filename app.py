@@ -24,7 +24,7 @@ def val2dict(flask.request.values)
         top_results = torch.topk(cos_scores, k=top_k)
 
         for score, idx in zip(top_results[0], top_results[1]):
-            print(corpus[idx], "(Score: %.4f)" % (score))
+            output[corpus[idx]] = float(score)
 
         return render_template('index.html', prediction_text='Similar words are $ {}'.format(output))
 
